@@ -49,7 +49,7 @@ class List extends React.Component {
     return (
       <div>
         {/* 遍历所有已添加的数据 */}
-        {（this.props.listItem||[]）.map((ele, index) => {
+        {(this.props.listItem || []).map((ele, index) => {
           return (
             <div key={index}>
               {/* 列出所有数据 */}
@@ -111,6 +111,10 @@ class App extends React.Component {
 
   //加载Localstorage的数据
   componentDidMount() {
+    var testList = ["test data1", "test data2", "test data 3"];
+
+    localStorage.setItem("list", JSON.stringify(testList));
+
     var newList = JSON.parse(localStorage.getItem("list"));
     this.setState({
       list: newList
