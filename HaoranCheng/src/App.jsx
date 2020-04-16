@@ -49,7 +49,7 @@ class List extends React.Component {
     return (
       <div>
         {/* 遍历所有已添加的数据 */}
-        {this.props.listItem.map((ele, index) => {
+        {（this.props.listItem||[]）.map((ele, index) => {
           return (
             <div key={index}>
               {/* 列出所有数据 */}
